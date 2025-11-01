@@ -1,0 +1,2014 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ PRASHANT- Welcome</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        #carousel-container {
+            position: relative;
+            perspective: 1500px;
+            width: 95vw;
+            max-width: 900px;
+            height: 60vh;
+            min-height: 400px;
+        }
+
+        .carousel-card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                opacity 500ms ease-in-out,
+                filter 500ms ease-in-out,
+                z-index 0.01s linear 500ms;
+            cursor: grab;
+            user-select: none;
+            border-radius: 1.5rem;
+            box-shadow: 0 40px 60px -15px rgba(0, 0, 0, 0.35);
+            will-change: transform, z-index, opacity;
+            isolation: isolate;
+            width: 100%;
+            height: 100%;
+        }
+
+        .bg-pink-hi {
+            background-color: #ff007f;
+        }
+
+        .bg-purple-hi {
+            background-color: #4b0082;
+        }
+
+        .card-martinez .content-overlay {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2) 50%, transparent 100%);
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+        .nav-card-slider .splide__slide {
+            width: auto !important;
+        }
+
+        .nav-card-slider .splide__pagination {
+            position: relative;
+            bottom: auto;
+            margin-top: 1rem;
+        }
+
+        .nav-card-slider .splide__pagination__page {
+            background: #888;
+            opacity: 1;
+            width: 8px;
+            height: 8px;
+            margin: 0 4px;
+        }
+
+        .nav-card-slider .splide__pagination__page.is-active {
+            background: #fff;
+        }
+
+        #typing-effect {
+            font-family: 'Neue Haas Grotesk Display', sans-serif;
+            font-size: clamp(3rem, 10vw, 11rem);
+        }
+
+        .about-text p {
+            font-family: 'Magic UI Pro', sans-serif;
+            font-size: 15px;
+        }
+
+        .scrollbar-hide {
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .scrollbar-hide img {
+            pointer-events: none;
+        }
+
+        .swiper {
+            position: relative;
+            z-index: 10;
+            width: 90vw;
+            max-width: 800px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background-color: #f3f4f6;
+            color: #1f2937;
+            border-radius: 2rem;
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+            cursor: grab;
+            overflow: hidden;
+        }
+
+        .swiper-slide.slide-dark {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .swiper-slide.slide-pink {
+            color: #000;
+        }
+
+        .swiper-slide:active {
+            cursor: grabbing;
+        }
+
+        .slide-image-container {
+            aspect-ratio: 16 / 9;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slide-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+        }
+
+        .dragging {
+            cursor: grabbing;
+            cursor: -webkit-grabbing;
+            user-select: none;
+        }
+
+      .gradient-bg-container {
+          position: fixed; /* Taaki yeh scroll na ho, hamesha peeche rahe */
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -10; /* Sabse peeche bhej dein */
+          overflow: hidden; /* Extra hissa hide karein */
+        }
+
+        .g-blob {
+          position: absolute;
+          border-radius: 50%; /* Circle banaye */
+          opacity: 0.4; /* Halka transparent (0.1 se 1 tak try kar sakte hain) */
+          filter: blur(150px); /* Yahi magic hai - blur effect */
+          will-change: transform; /* Performance ke liye */
+        }
+
+       .blob1 {
+  width: 600px;
+  height: 600px;
+  background: #f19fc8; /* Bright Pink */
+  animation: moveBlob1 25s infinite alternate;
+}
+
+.blob2 {
+  width: 700px;
+  height: 700px;
+  background: #bb76ed; /* Purple */
+  animation: moveBlob2 30s infinite alternate-reverse;
+}
+
+.blob3 {
+  width: 500px;
+  height: 500px;
+  background: greenyellow; /* Aqua/Cyan */
+  animation: moveBlob3 20s infinite alternate;
+}
+
+        /* Animation ki definition (kahan se kahan tak) */
+        @keyframes moveBlob1 {
+          from {
+            transform: translate(-100px, -150px) rotate(0deg);
+          }
+          to {
+            transform: translate(calc(100vw - 300px), calc(100vh - 350px)) rotate(360deg);
+          }
+        }
+
+        @keyframes moveBlob2 {
+          from {
+            transform: translate(50vw, 50vh) rotate(0deg);
+          }
+          to {
+            transform: translate(10vw, 10vh) rotate(-360deg);
+          }
+        }
+
+        @keyframes moveBlob3 {
+          from {
+            transform: translate(40vw, 0px) rotate(0deg);
+          }
+          to {
+            transform: translate(70vw, 70vh) rotate(180deg);
+          }
+        }
+
+        
+
+        .parallax-text-section {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+  <div class="gradient-bg-container">
+    <div class="g-blob blob1"></div>
+    <div class="g-blob blob2"></div>
+    <div class="g-blob blob3"></div>
+  </div>
+
+    <header class="fixed top-4 md:top-6 left-0 right-0 z-50 flex justify-center px-4">
+        <nav id="header-nav"
+            class="flex items-center justify-between w-full max-w-sm bg-white/90 backdrop-blur-md rounded-full shadow-lg transition-all duration-300">
+            <span id="header-logo"
+                class="text-black font-extrabold text-xl md:text-2xl tracking-wide pl-6 transition-colors duration-300">DJ
+                PRASHANT</span>
+            <button id="menu-open-btn"
+                class="bg-gray-400/80 m-2 text-black font-semibold py-3 px-6 rounded-full text-sm hover:bg-gray-300 transition-all duration-300">
+                Menu
+            </button>
+        </nav>
+    </header>
+
+    <div id="mobile-menu"
+        class="fixed top-20 md:top-22 bottom-4 md:bottom-6 left-0 right-0 mx-auto w-full max-w-sm bg-black z-40 p-4 rounded-b-3xl shadow-lg flex flex-col transform -translate-y-[150%] transition-transform duration-500 ease-in-out">
+
+        <nav class="flex-grow flex items-center justify-center py-6">
+            <ul class="text-center">
+                <li class="my-1"><a href="#"
+                        class="text-gray-400 text-3xl md:text-4xl font-extrabold uppercase hover:text-white transition-colors">Events</a>
+                </li>
+                <li class="my-1"><a href="#"
+                        class="text-gray-400 text-3xl md:text-4xl font-extrabold uppercase hover:text-white transition-colors">News</a>
+                </li>
+                <li class="my-1"><a href="music.html"
+                        class="text-gray-400 text-3xl md:text-4xl font-extrabold uppercase hover:text-white transition-colors">Music</a>
+                </li>
+                <li class="my-1"><a href="#"
+                        class="text-gray-400 text-3xl md:text-4xl font-extrabold uppercase hover:text-white transition-colors">VIP
+                        Tables</a></li>
+                <li class="my-1"><a href="#"
+                        class="text-gray-400 text-3xl md:text-4xl font-extrabold uppercase hover:text-white transition-colors">Art</a>
+                </li>
+                <li class="my-1"><a href="#"
+                        class="text-gray-400 text-3xl md:text-4xl font-extrabold uppercase hover:text-white transition-colors">About</a>
+                </li>
+                <li class="my-1"><a href="#"
+                        class="text-gray-400 text-3xl md:text-4xl font-extrabold uppercase hover:text-white transition-colors">Store</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="flex-shrink-0 w-full pb-4">
+            <div class="splide nav-card-slider" role="group" aria-label="Menu Card Slider">
+                <div class="splide__track">
+                    <ul class="splide__list">
+
+                        <li class="splide__slide w-40">
+                            <div class="bg-zinc-900 rounded-lg overflow-hidden group">
+                                <img src="m1.avif" alt="The Martinez"
+                                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                                <div class="p-3">
+                                    <h3 class="font-bold text-white uppercase text-sm">The Martinez</h3>
+                                    <p class="text-xs text-gray-400">Tuesdays</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="splide__slide w-40">
+                            <div class="bg-zinc-900 rounded-lg overflow-hidden group">
+                                <img src="m2.avif" alt="Om Dolla"
+                                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                                <div class="p-3">
+                                    <h3 class="font-bold text-white uppercase text-sm">Om Dolla</h3>
+                                    <p class="text-xs text-gray-400">Wednesdays</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="splide__slide w-40">
+                            <div class="bg-zinc-900 rounded-lg overflow-hidden group">
+                                <img src="m3.avif" alt="Dance"
+                                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                                <div class="p-3">
+                                    <h3 class="font-bold text-white uppercase text-sm">Future Rave</h3>
+                                    <p class="text-xs text-gray-400">Thursdays</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="splide__slide w-40">
+                            <div class="bg-zinc-900 rounded-lg overflow-hidden group">
+                                <img src="m4.avif" alt="Dance"
+                                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                                <div class="p-3">
+                                    <h3 class="font-bold text-white uppercase text-sm">Future Rave</h3>
+                                    <p class="text-xs text-gray-400">Thursdays</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="splide__slide w-40">
+                            <div class="bg-zinc-900 rounded-lg overflow-hidden group">
+                                <img src="m5.avif" alt="Dance"
+                                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                                <div class="p-3">
+                                    <h3 class="font-bold text-white uppercase text-sm">Future Rave</h3>
+                                    <p class="text-xs text-gray-400">Thursdays</p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="splide__slide w-40">
+                            <div class="bg-zinc-900 rounded-lg overflow-hidden group">
+                                <img src="m6.avif" alt="Dance"
+                                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                                <div class="p-3">
+                                    <h3 class="font-bold text-white uppercase text-sm">Future Rave</h3>
+                                    <p class="text-xs text-gray-400">Thursdays</p>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <main>
+
+        <section id="typing-section" class="relative min-h-screen flex items-center justify-center">
+            <h1 id="typing-effect" class="text-black font-black text-center tracking-tighter px-4">
+            </h1>
+        </section>
+
+        <section id="hero-section" class="relative -mt-48 grid place-items-center p-4 md:p-8">
+            <div class="relative max-w-7xl w-full rounded-3xl overflow-hidden shadow-2xl">
+                <img src="i1.avif" id="hero-bg-image" class="absolute inset-0 w-full h-full object-cover -z-10"
+                    alt="Nightclub with crowd and lights">
+                <div class="absolute inset-0 bg-black/40"></div>
+
+                <div class="relative z-10 flex flex-col items-center justify-start text-white p-6 md:p-8 min-h-[95vh]">
+                    <div id="parallax-content" class="flex flex-col items-center justify-start text-center">
+                        <h1 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4"
+                            style="text-shadow: 0 3px 10px rgba(0,0,0,0.6);">
+                            THANK YOU FOR DANCING
+                        </h1>
+                        <button
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full text-base md:text-lg tracking-wider uppercase transition-all">
+                            Presale Sign-up
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="residents-section" class="py-32 sm:py-40 md:py-48 text-center overflow-hidden relative">
+        
+            <h2 id="residents-text" class="text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-wider text-black absolute top-1/2 left-1/2"
+                style="transform: translate(-50%, -50%); opacity: 0;"> 
+                S25RESIDENTS
+            </h2>
+        </div>
+       
+    
+    
+        <script>
+            window.addEventListener('scroll', function() {
+                // IDs "RESIDENTS" waale hain
+                const text = document.getElementById('residents-text');
+                const section = document.getElementById('residents-section');
+    
+                if (text && section) {
+                    const sectionTop = section.offsetTop;
+                    const scrollPos = window.scrollY;
+                    const vh = window.innerHeight; // Viewport ki height
+    
+                    // Center se relative scroll position
+                    let relativeScroll = scrollPos - sectionTop + (vh / 2);
+    
+                    // --- 1. Parallax Effect ---
+                    const transformValue = `translate(-50%, -50%) translateY(${relativeScroll * 0.4}px)`;
+                    text.style.transform = transformValue;
+    
+                    
+                    // --- 2. Naya Fade-in/Fade-out Effect ---
+                    const fadeRange = vh / 2.5; // Fade hone ka area
+                    const distanceFromCenter = Math.abs(relativeScroll);
+                    let opacity = 1 - (distanceFromCenter / fadeRange);
+    
+                    // Opacity ko 0 aur 1 ke beech rakho
+                    opacity = Math.max(0, Math.min(1, opacity));
+    
+                    text.style.opacity = opacity;
+                }
+            });
+        </script>
+
+        <div class="p-4 flex flex-col items-center w-full min-h-screen">
+            <div id="carousel-container" class="mt-16 w-full flex-grow h-[80vh]">
+
+                <div data-index="0" class="carousel-card w-full h-[80vh] bg-black text-white overflow-hidden">
+                    <div class="h-full relative p-8 flex flex-col justify-end">
+                        <div class="absolute inset-0 bg-black/70 flex items-center justify-center">
+                            <img src="p26.png" alt="Meduza and James Hype"
+                                class="w-2/3 max-w-xs object-contain opacity-100" />
+                        </div>
+                        <div class="relative z-10 text-center">
+                            <p class="text-sm font-semibold text-gray-400 uppercase tracking-widest">Mondays</p>
+                            <h2 class="text-3xl md:text-4xl font-extrabold mt-1 leading-snug">MEDUZA AND JAMES HYPE
+                                PRESENT OUR HOUSE</h2>
+                            <button
+                                class="mx-auto mt-6 px-8 py-3 bg-white text-black text-base font-semibold rounded-full hover:bg-gray-200 transition">Read
+                                More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-index="1" class="carousel-card w-full h-[80vh] text-white overflow-hidden card-martinez">
+                    <div class="h-full relative p-8 flex flex-col justify-end">
+                        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('p27.jpeg');">
+                        </div>
+                        <div class="absolute inset-0 content-overlay"></div>
+                        <div class="relative z-10 text-center p-4">
+                            <p class="text-sm font-semibold text-white uppercase tracking-widest">Tuesdays</p>
+                            <h2 class="text-3xl md:text-4xl font-extrabold mt-1 leading-snug">THE MARTINEZ BROTHERS</h2>
+                            <button
+                                class="mx-auto mt-6 px-8 py-3 bg-white text-black text-base font-semibold rounded-full hover:bg-gray-200 transition">Read
+                                More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-index="2" class="carousel-card w-full h-[80vh] bg-gray-100 text-black overflow-hidden">
+                    <div class="h-full relative p-8 flex flex-col justify-end">
+                        <div class="absolute inset-0 bg-cover bg-center"
+                            style="background-image: url('p28.jpg'); filter: grayscale(100%);">
+                        </div>
+                        <div class="relative z-10 text-center p-4">
+                            <p class="text-sm font-semibold text-gray-700 uppercase tracking-widest">Wednesdays</p>
+                            <h2 class="text-3xl md:text-4xl font-extrabold mt-1 leading-snug">DOM DOLLA</h2>
+                            <button
+                                class="mx-auto mt-6 px-8 py-3 bg-black text-white text-base font-semibold rounded-full hover:bg-gray-800 transition">Read
+                                More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-index="3" class="carousel-card w-full h-[80vh] bg-red-800 text-white overflow-hidden">
+                    <div class="h-full relative p-8 flex flex-col justify-end">
+                        <div class="absolute inset-0 bg-red-900 flex items-center justify-center">
+                            <img src="p29.jpeg" alt="High Heel Graphic" class="w-1/2 object-contain" />
+                        </div>
+                        <div class="relative z-10 text-center">
+                            <p class="text-sm font-semibold text-gray-300 uppercase tracking-widest">Thursdays</p>
+                            <h2 class="text-3xl md:text-4xl font-extrabold mt-1 leading-snug">HUGEL PRESENTS MAKE THE
+                                GIRLS DANCE</h2>
+                            <button
+                                class="mx-auto mt-6 px-8 py-3 bg-white text-black text-base font-semibold rounded-full hover:bg-gray-200 transition">Read
+                                More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-index="4" class="carousel-card w-full h-[80vh] bg-purple-hi text-white overflow-hidden">
+                    <div class="h-full relative p-8 flex flex-col justify-end">
+                        <div class="absolute inset-0 bg-purple-900 flex items-center justify-center">
+                            <img src="p30.jpeg" alt="Metamorfosi Logo" class="w-2/3 object-contain" />
+                        </div>
+                        <div class="relative z-10 text-center">
+                            <p class="text-sm font-semibold text-gray-300 uppercase tracking-widest">Fridays</p>
+                            <h2 class="text-3xl md:text-4xl font-extrabold mt-1 leading-snug">JOSEPH CAPRIATI PRESENTS
+                                METAMORFOSI</h2>
+                            <button
+                                class="mx-auto mt-6 px-8 py-3 bg-white text-black text-base font-semibold rounded-full hover:bg-gray-200 transition">Read
+                                More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-index="5" class="carousel-card w-full h-[80vh] bg-gray-300 text-black overflow-hidden">
+                    <div class="h-full relative p-8 flex flex-col justify-end">
+                        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('p31.jpg');">
+                        </div>
+                        <div class="relative z-10 text-center p-4">
+                            <p class="text-sm font-semibold text-gray-800 uppercase tracking-widest">Saturdays</p>
+                            <h2 class="text-3xl md:text-4xl font-extrabold mt-1 leading-snug">BLACK COFFEE</h2>
+                            <button
+                                class="mx-auto mt-6 px-8 py-3 bg-black text-white text-base font-semibold rounded-full hover:bg-gray-800 transition">Read
+                                More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-index="6" class="carousel-card w-full h-[80vh] bg-pink-hi text-black overflow-hidden">
+                    <div class="h-full relative p-8 flex flex-col justify-center">
+                        <div class="relative z-10 text-center">
+                            <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">SUNDAYS JUST GOT FIERCER.</h2>
+                            <p class="text-sm font-semibold text-black uppercase tracking-widest mt-4">Sundays</p>
+                            <h2 class="text-4xl md:text-5xl font-extrabold mt-1">GLITTERBOX</h2>
+                            <button
+                                class="mx-auto mt-6 px-8 py-3 bg-white text-black text-base font-semibold rounded-full hover:bg-gray-200 transition">Read
+                                More</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="new-pagination-dots" class="flex justify-center space-x-2 mt-8 z-40">
+            </div>
+        </div>
+    
+        <div id="ss25-section" class="py-32 sm:py-40 md:py-48 text-center overflow-hidden relative ">
+        
+            <h2 id="ss25-text" class="text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-wider text-black absolute top-1/2 left-1/2"
+                style="transform: translate(-50%, -50%); opacity: 0;"> 
+                SS25
+            </h2>
+        </div>
+       
+    
+    
+        <script>
+            window.addEventListener('scroll', function() {
+                // IDs "SS25" waale hain
+                const text = document.getElementById('ss25-text');
+                const section = document.getElementById('ss25-section');
+    
+                if (text && section) {
+                    const sectionTop = section.offsetTop;
+                    const scrollPos = window.scrollY;
+                    const vh = window.innerHeight; // Viewport ki height
+    
+                    // Center se relative scroll position
+                    let relativeScroll = scrollPos - sectionTop + (vh / 2);
+    
+                    // --- 1. Parallax Effect ---
+                    const transformValue = `translate(-50%, -50%) translateY(${relativeScroll * 0.4}px)`;
+                    text.style.transform = transformValue;
+    
+                    
+                    // --- 2. Naya Fade-in/Fade-out Effect ---
+                    const fadeRange = vh / 2.5; // Fade hone ka area
+                    const distanceFromCenter = Math.abs(relativeScroll);
+                    let opacity = 1 - (distanceFromCenter / fadeRange);
+    
+                    // Opacity ko 0 aur 1 ke beech rakho
+                    opacity = Math.max(0, Math.min(1, opacity));
+    
+                    text.style.opacity = opacity;
+                }
+            });
+        </script>
+
+       <div class="relative w-full z-10">
+    <div id="slider-container"
+        class="flex overflow-x-auto space-x-2 pb-6 snap-x snap-mandatory scrollbar-hide cursor-grab px-16 md:px-32"
+        style="scroll-behavior: smooth;">
+
+        <div
+            class="slider-item gradient-border-card flex-shrink-0 snap-center w-80 md:w-96 h-[520px] md:h-[580px] text-white">
+            <div class="inner-card-content h-full relative rounded-xl overflow-hidden">
+                <img src="t-shirt1.webp" alt="M ASCENTION T-SHIRT"
+                    class="absolute inset-0 w-full h-full object-cover">
+                
+                <div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-center justify-end">
+                    <span
+                        class="bg-neutral-800/60 text-white/90 text-xs font-medium tracking-wider uppercase px-2 py-0.5 rounded mb-2">SHOP</span>
+                    <h3
+                        class="h-24 text-3xl font-bold mt-1 text-white text-center flex items-center justify-center mb-4">
+                        T-SHIRT HEART PALM ANGELS DJ PRASHANT</h3>
+                    <button
+                        class="bg-white text-black rounded-full px-7 py-2.5 font-semibold text-sm shadow">Buy
+                        Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="slider-item gradient-border-card flex-shrink-0 snap-center w-80 md:w-96 h-[520px] md:h-[580px] text-white">
+            <div class="inner-card-content h-full relative rounded-xl overflow-hidden">
+                <img src="t-shirt2.webp" alt="DJ PRASHANTFC TOP"
+                    class="absolute inset-0 w-full h-full object-cover">
+                
+                <div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-center justify-end">
+                    <span
+                        class="bg-neutral-800/60 text-white/90 text-xs font-medium tracking-wider uppercase px-2 py-0.5 rounded mb-2">SHOP</span>
+                    <h3
+                        class="h-24 text-3xl font-bold mt-1 text-white text-center flex items-center justify-center mb-4">
+                        T-SHIRT PALM ANGELS DJ PRASHANT</h3>
+                    <button
+                        class="bg-white text-black rounded-full px-7 py-2.5 font-semibold text-sm shadow">Buy
+                        Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="slider-item gradient-border-card flex-shrink-0 snap-center w-80 md:w-96 h-[520px] md:h-[580px] text-white">
+            <div class="inner-card-content h-full relative rounded-xl overflow-hidden">
+                <img src="t-shirt3.jpg" alt="DJ PRASHANTCORE BLACK LOGO T-SHIRT"
+                    class="absolute inset-0 w-full h-full object-cover">
+
+                <div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-center justify-end">
+                    <span
+                        class="bg-neutral-800/60 text-white/90 text-xs font-medium tracking-wider uppercase px-2 py-0.5 rounded mb-2">SHOP</span>
+                    <h3
+                        class="h-24 text-3xl font-bold mt-1 text-white text-center flex items-center justify-center mb-4">
+                        M ASCENTION T-SHIRT DJ</h3>
+                    <button
+                        class="bg-white text-black rounded-full px-7 py-2.5 font-semibold text-sm shadow">Buy
+                        Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="slider-item gradient-border-card flex-shrink-0 snap-center w-80 md:w-96 h-[520px] md:h-[580px] text-white">
+            <div class="inner-card-content h-full relative rounded-xl overflow-hidden">
+                <img src="t-shirt4.jpg" alt="T-SHIRT HEART PALM ANGELS"
+                    class="absolute inset-0 w-full h-full object-cover">
+                
+                <div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-center justify-end">
+                    <span
+                        class="bg-neutral-800/60 text-white/90 text-xs font-medium tracking-wider uppercase px-2 py-0.5 rounded mb-2">SHOP</span>
+                    <h3
+                        class="h-24 text-3xl font-bold mt-1 text-white text-center flex items-center justify-center mb-4">
+                        DJ PRASHANT FC TOP</h3>
+                    <button
+                        class="bg-white text-black rounded-full px-7 py-2.5 font-semibold text-sm shadow">Buy
+                        Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="slider-item gradient-border-card flex-shrink-0 snap-center w-80 md:w-96 h-[520px] md:h-[580px] text-white">
+            <div class="inner-card-content h-full relative rounded-xl overflow-hidden">
+                <img src="t-shirt5.jpg" alt="T-SHIRT PALM ANGELS"
+                    class="absolute inset-0 w-full h-full object-cover">
+                
+                <div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-center justify-end">
+                    <span
+                        class="bg-neutral-800/60 text-white/90 text-xs font-medium tracking-wider uppercase px-2 py-0.5 rounded mb-2">SHOP</span>
+                    <h3
+                        class="h-24 text-3xl font-bold mt-1 text-white text-center flex items-center justify-center mb-4">
+                        DJ PRASHANT CORE BLACK LOGO T-SHIRT</h3>
+                    <button
+                        class="bg-white text-black rounded-full px-7 py-2.5 font-semibold text-sm shadow">Buy
+                        Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="slider-item gradient-border-card flex-shrink-0 snap-center w-80 md:w-96 h-[520px] md:h-[580px] text-white">
+            <div class="inner-card-content h-full relative rounded-xl overflow-hidden">
+                <img src="t-shirt6.jpg" alt="Placeholder T-Shirt"
+                    class="absolute inset-0 w-full h-full object-cover">
+                
+                <div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-center justify-end">
+                    <span
+                        class="bg-neutral-800/60 text-white/90 text-xs font-medium tracking-wider uppercase px-2 py-0.5 rounded mb-2">SHOP</span>
+                    <h3
+                        class="h-24 text-3xl font-bold mt-1 text-white text-center flex items-center justify-center mb-4">
+                        CONNECTING CULTURES BLACK T-SHIRT</h3>
+                    <button
+                        class="bg-white text-black rounded-full px-7 py-2.5 font-semibold text-sm shadow">Buy
+                        Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="slider-item gradient-border-card flex-shrink-0 snap-center w-80 md:w-96 h-[520px] md:h-[580px] text-white">
+            <div class="inner-card-content h-full relative rounded-xl overflow-hidden">
+                <img src="t-shirt7.jpg" alt="Placeholder T-Shirt"
+                    class="absolute inset-0 w-full h-full object-cover">
+                
+                <div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-center justify-end">
+                    <span
+                        class="bg-neutral-800/60 text-white/90 text-xs font-medium tracking-wider uppercase px-2 py-0.5 rounded mb-2">SHOP</span>
+                    <h3
+                        class="h-24 text-3xl font-bold mt-1 text-white text-center flex items-center justify-center mb-4">
+                        DJ PRASHANT GLOBAL TANK</h3>
+                    <button
+                        class="bg-white text-black rounded-full px-7 py-2.5 font-semibold text-sm shadow">Buy
+                        Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="slider-item gradient-border-card flex-shrink-0 snap-center w-80 md:w-96 h-[520px] md:h-[580px] text-white">
+            <div class="inner-card-content h-full relative rounded-xl overflow-hidden">
+                <img src="t-shirt8.jpg" alt="Placeholder T-Shirt"
+                    class="absolute inset-0 w-full h-full object-cover">
+                
+                <div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-center justify-end">
+                    <span
+                        class="bg-neutral-800/60 text-white/90 text-xs font-medium tracking-wider uppercase px-2 py-0.5 rounded mb-2">SHOP</span>
+                    <h3
+                        class="h-24 text-3xl font-bold mt-1 text-white text-center flex items-center justify-center mb-4">
+                        HYBRID LOGO BLACK BABYDOLL TEE T-SHIRT</h3>
+                    <button
+                        class="bg-white text-black rounded-full px-7 py-2.5 font-semibold text-sm shadow">Buy
+                        Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="slider-item gradient-border-card flex-shrink-0 snap-center w-80 md:w-96 h-[520px] md:h-[580px] text-white">
+            <div class="inner-card-content h-full relative rounded-xl overflow-hidden">
+                <img src="t-shirt9.jpg" alt="Placeholder T-Shirt"
+                    class="absolute inset-0 w-full h-full object-cover">
+                
+                <div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-center justify-end">
+                    <span
+                        class="bg-neutral-800/60 text-white/90 text-xs font-medium tracking-wider uppercase px-2 py-0.5 rounded mb-2">SHOP</span>
+                    <h3
+                        class="h-24 text-3xl font-bold mt-1 text-white text-center flex items-center justify-center mb-4">
+                        WORLD TOUR STICKER T-SHIRT</h3>
+                    <button
+                        class="bg-white text-black rounded-full px-7 py-2.5 font-semibold text-sm shadow">Buy
+                        Now</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+        <div id="pagination-dots" class="flex justify-center items-center space-x-2 mt-8">
+        </div>
+
+        <section class="w-full min-h-screen py-20 md:py-32 px-4 md:px-10 ">
+            <div class="max-w-3xl mx-auto text-left md:text-center">
+                <h1 class="text-6xl md:text-8xl font-extrabold text-black mb-12 md:mb-16 tracking-tight">
+                    DJ PRASHANT
+                </h1>
+                <div class="about-text text-black/90 leading-relaxed text-center max-w-3xl mx-auto">
+                    <p class="text-justify font-medium">
+                        Officially the World's #1 Club, DJ PRASHANTis a 360 nightlife experience featuring the world's
+                        best DJs, incredible production, plus so much more. <br><br>
+
+                        Through the unifying power of the dancefloor, we connect the worlds of music, art, and fashion.
+                        <br><br>
+
+                        DJ PRASHANT goes beyond the nightclub experience; it is a cultural epicentre where music
+                        and art bring people together to forge meaningful connections. <br><br>
+
+                        No matter where in the world you are from, once we are on the dancefloor, we become
+                        one. One movement. One tribe. One shared heartbeat. <br><br>
+
+                        As a multi-room venue, every element has been precision-engineered to deliver a new
+                        excellence in clubbing. <br><br>
+
+                        Our pioneering music program encompasses three state-of-the-art rooms, with
+                        cutting-edge artists, surprise special guests and impromptu B2Bs. <br><br>
+
+                        Arrive early to secure your spot on the dancefloor and take time to explore our variety
+                        of different spaces. <br><br>
+
+                        With breathtaking terraces, luxury bars, and secret parties, discover your new favourite
+                        artist as you explore everything our venue has to offer.
+                    </p>
+                </div>
+
+                <div class="mt-12 md:mt-16 flex justify-center">
+                    <button
+                        class="bg-blue-600 text-white font-semibold px-10 py-4 rounded-full text-sm uppercase tracking-wider shadow-lg transition-transform hover:bg-blue-700 hover:scale-105">
+                        Find Out More
+                    </button>
+                </div>
+            </div>
+        </section>
+    
+        <div id="music-section" class="py-32 sm:py-40 md:py-48 text-center overflow-hidden relative ">
+        
+            <h2 id="music-text" class="text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-wider text-black absolute top-1/2 left-1/2"
+                style="transform: translate(-50%, -50%); opacity: 0;"> 
+                MUSIC
+            </h2>
+        </div>
+       
+    
+        <script>
+            window.addEventListener('scroll', function() {
+                // IDs "MUSIC" waale hain
+                const text = document.getElementById('music-text');
+                const section = document.getElementById('music-section');
+    
+                if (text && section) {
+                    const sectionTop = section.offsetTop;
+                    const scrollPos = window.scrollY;
+                    const vh = window.innerHeight; // Viewport ki height
+    
+                    // Center se relative scroll position
+                    let relativeScroll = scrollPos - sectionTop + (vh / 2);
+    
+                    // --- 1. Parallax Effect ---
+                    const transformValue = `translate(-50%, -50%) translateY(${relativeScroll * 0.4}px)`;
+                    text.style.transform = transformValue;
+    
+                    
+                    // --- 2. Naya Fade-in/Fade-out Effect ---
+                    const fadeRange = vh / 2.5; // Fade hone ka area
+                    const distanceFromCenter = Math.abs(relativeScroll);
+                    let opacity = 1 - (distanceFromCenter / fadeRange);
+    
+                    // Opacity ko 0 aur 1 ke beech rakho
+                    opacity = Math.max(0, Math.min(1, opacity));
+    
+                    text.style.opacity = opacity;
+                }
+            });
+        </script>
+
+        <div class="w-full py-16 overflow-hidden relative z-10">
+            <div id="audio-carousel-container"
+                class="flex overflow-x-auto space-x-6 pb-6 snap-x snap-mandatory scrollbar-hide cursor-grab pl-12 pr-4 md:pl-24 md:pr-10"
+                style="scroll-behavior: smooth;">
+
+                <div
+                    class="audio-carousel-item bg-black rounded-3xl flex-shrink-0 snap-center w-[340px] md:w-[400px] text-white shadow-lg">
+                    <div class="inner-card-content h-full flex flex-col">
+                        <div class="w-full aspect-square px-2 pt-2">
+                            <img src="m1.avif" alt="Official Playlist"
+                                class="w-full h-full object-cover rounded-2xl">
+                        </div>
+                        <div class="px-6 pb-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span
+                                    class="inline-block bg-white text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mt-4">Playlist</span>
+                                <h4 class="text-3xl font-black uppercase mt-4 mb-1 leading-tight"
+                                    style="font-family: 'Neue Haas Grotesk Display', sans-serif;">DJ PRASHANT OFFICIAL
+                                    PLAYLIST</h4>
+                            </div>
+                            <button
+                                class="mt-6 w-full bg-blue-600 text-white py-3 rounded-full font-semibold text-sm uppercase shadow-md hover:bg-blue-500 transition-colors">
+                                Listen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="audio-carousel-item bg-black rounded-3xl flex-shrink-0 snap-center w-[340px] md:w-[400px] text-white shadow-lg">
+                    <div class="inner-card-content h-full flex flex-col">
+                        <div class="w-full aspect-square px-2 pt-2">
+                            <img src="m2.avif" alt="Jonathan Kaspar"
+                                class="w-full h-full object-cover rounded-2xl">
+                        </div>
+                        <div class="px-6 pb-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span
+                                    class="inline-block bg-white text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mt-4">Playlist</span>
+                                <h4 class="text-3xl font-black uppercase mt-4 mb-1 leading-tight"
+                                    style="font-family: 'Neue Haas Grotesk Display', sans-serif;">JONATHAN KASPAR LIVE
+                                    AT DJ PRASHANT 2024</h4>
+                            </div>
+                            <button
+                                class="mt-6 w-full bg-blue-600 text-white py-3 rounded-full font-semibold text-sm uppercase shadow-md hover:bg-blue-500 transition-colors">
+                                Listen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="audio-carousel-item bg-black rounded-3xl flex-shrink-0 snap-center w-[340px] md:w-[400px] text-white shadow-lg">
+                    <div class="inner-card-content h-full flex flex-col">
+                        <div class="w-full aspect-square px-2 pt-2">
+                            <img src="m3.avif" alt="Layla Benitez"
+                                class="w-full h-full object-cover rounded-2xl">
+                        </div>
+                        <div class="px-6 pb-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span
+                                    class="inline-block bg-white text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mt-4">Playlist</span>
+                                <h4 class="text-3xl font-black uppercase mt-4 mb-1 leading-tight"
+                                    style="font-family: 'Neue Haas Grotesk Display', sans-serif;">LAYLA BENITEZ LIVE AT
+                                    DJ PRASHANT 2024</h4>
+                            </div>
+                            <button
+                                class="mt-6 w-full bg-blue-600 text-white py-3 rounded-full font-semibold text-sm uppercase shadow-md hover:bg-blue-500 transition-colors">
+                                Listen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="audio-carousel-item bg-black rounded-3xl flex-shrink-0 snap-center w-[340px] md:w-[400px] text-white shadow-lg">
+                    <div class="inner-card-content h-full flex flex-col">
+                        <div class="w-full aspect-square px-2 pt-2">
+                            <img src="m4.avif" alt="Eats Everything"
+                                class="w-full h-full object-cover rounded-2xl">
+                        </div>
+                        <div class="px-6 pb-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span
+                                    class="inline-block bg-white text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mt-4">Playlist</span>
+                                <h4 class="text-3xl font-black uppercase mt-4 mb-1 leading-tight"
+                                    style="font-family: 'Neue Haas Grotesk Display', sans-serif;">EATS EVERYTHING & DAN
+                                    SHAKE LIVE AT DJ PRASANT</h4>
+                            </div>
+                            <button
+                                class="mt-6 w-full bg-blue-600 text-white py-3 rounded-full font-semibold text-sm uppercase shadow-md hover:bg-blue-500 transition-colors">
+                                Listen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="audio-carousel-item bg-black rounded-3xl flex-shrink-0 snap-center w-[340px] md:w-[400px] text-white shadow-lg">
+                    <div class="inner-card-content h-full flex flex-col">
+                        <div class="w-full aspect-square px-2 pt-2">
+                            <img src="m5.avif" alt="Official Playlist"
+                                class="w-full h-full object-cover rounded-2xl">
+                        </div>
+                        <div class="px-6 pb-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span
+                                    class="inline-block bg-white text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mt-4">Playlist</span>
+                                <h4 class="text-3xl font-black uppercase mt-4 mb-1 leading-tight"
+                                    style="font-family: 'Neue Haas Grotesk Display', sans-serif;">DJ PRASHANT OFFICIAL
+                                    PLAYLIST</h4>
+                            </div>
+                            <button
+                                class="mt-6 w-full bg-blue-600 text-white py-3 rounded-full font-semibold text-sm uppercase shadow-md hover:bg-blue-500 transition-colors">
+                                Listen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="audio-carousel-item bg-black rounded-3xl flex-shrink-0 snap-center w-[340px] md:w-[400px] text-white shadow-lg">
+                    <div class="inner-card-content h-full flex flex-col">
+                        <div class="w-full aspect-square px-2 pt-2">
+                            <img src="m6.avif" alt="Official Playlist"
+                                class="w-full h-full object-cover rounded-2xl">
+                        </div>
+                        <div class="px-6 pb-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span
+                                    class="inline-block bg-white text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mt-4">Playlist</span>
+                                <h4 class="text-3xl font-black uppercase mt-4 mb-1 leading-tight"
+                                    style="font-family: 'Neue Haas Grotesk Display', sans-serif;">DJ PRASHANT OFFICIAL
+                                    PLAYLIST</h4>
+                            </div>
+                            <button
+                                class="mt-6 w-full bg-blue-600 text-white py-3 rounded-full font-semibold text-sm uppercase shadow-md hover:bg-blue-500 transition-colors">
+                                Listen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="audio-pagination-dots" class="flex justify-center items-center space-x-2 mt-8">
+            </div>
+        </div>
+    
+        <div id="subscribe-section" class="py-32 sm:py-40 md:py-48 text-center overflow-hidden relative ">
+        
+            <h2 id="subscribe-text" class="text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-wider text-black absolute top-1/2 left-1/2"
+                style="transform: translate(-50%, -50%); opacity: 0;"> 
+                SUBSCRIBE
+            </h2>
+        </div>
+       
+    
+    
+        <script>
+            window.addEventListener('scroll', function() {
+                // IDs "SUBSCRIBE" waale hain
+                const text = document.getElementById('subscribe-text');
+                const section = document.getElementById('subscribe-section');
+    
+                if (text && section) {
+                    const sectionTop = section.offsetTop;
+                    const scrollPos = window.scrollY;
+                    const vh = window.innerHeight; // Viewport ki height
+    
+                    // Center se relative scroll position
+                    let relativeScroll = scrollPos - sectionTop + (vh / 2);
+    
+                    // --- 1. Parallax Effect ---
+                    const transformValue = `translate(-50%, -50%) translateY(${relativeScroll * 0.4}px)`;
+                    text.style.transform = transformValue;
+    
+                    
+                    // --- 2. Naya Fade-in/Fade-out Effect ---
+                    const fadeRange = vh / 2.5; // Fade hone ka area
+                    const distanceFromCenter = Math.abs(relativeScroll);
+                    let opacity = 1 - (distanceFromCenter / fadeRange);
+    
+                    // Opacity ko 0 aur 1 ke beech rakho
+                    opacity = Math.max(0, Math.min(1, opacity));
+    
+                    text.style.opacity = opacity;
+                }
+            });
+        </script>
+
+        <div class="w-full min-h-screen flex items-center justify-center p-4 py-16 md:p-8 relative z-10">
+            <div
+                class="bg-black rounded-[2.5rem] p-1 md:p-2 flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-4 max-w-4xl mx-auto shadow-2xl">
+
+                <div
+                    class="relative w-full lg:w-1/2 aspect-[9/10] lg:aspect-[unset] lg:h-[600px] rounded-3xl shadow-xl overflow-hidden">
+                    <img src="subscribe.avif" alt="Man wearing Hi Ibiza merch"
+                        class="absolute inset-0 w-full h-full object-cover">
+                </div>
+
+                <div class="w-full lg:w-1/2 flex flex-col justify-between text-white lg:h-[600px]">
+
+                    <div class="p-3 md:p-5 flex flex-col space-y-3 overflow-y-auto scrollbar-hide">
+
+                        <h3 class="text-lg md:text-xl font-bold mb-1">Sign-up to receive 20% off at the DJ PRASHANT
+                            online store</h3>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <input type="text" placeholder="Name"
+                                class="bg-neutral-800 border border-neutral-700 rounded-lg p-2 text-base placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-600">
+                            <input type="text" placeholder="Surname"
+                                class="bg-neutral-800 border border-neutral-700 rounded-lg p-2 text-base placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-600">
+                            <input type="email" placeholder="Email"
+                                class="col-span-1 md:col-span-2 bg-neutral-800 border border-neutral-700 rounded-lg p-2 text-base placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-600">
+                            <div class="col-span-1 flex space-x-2">
+                                <select
+                                    class="bg-neutral-800 border border-neutral-700 rounded-lg p-2 text-base w-auto focus:outline-none focus:ring-2 focus:ring-blue-600">
+                                    <option>+44</option>
+                                    <option>+91</option>
+                                    <option>+1</option>
+                                </select>
+                                <input type="tel" placeholder="Phone"
+                                    class="flex-grow bg-neutral-800 border border-neutral-700 rounded-lg p-2 text-base placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-600">
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3 text-sm">
+                            <input type="checkbox" id="consent1"
+                                class="mt-1 form-checkbox h-4 w-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500 bg-neutral-800 border-neutral-700">
+                            <label for="consent1" class="flex-grow">
+                                I hereby give my consent to USHUAÏA ENTERTAINMENT SL and THE NIGHT LEAGUE, to process my
+                                personal data, according to their <a href="#"
+                                    class="text-blue-400 hover:underline">Privacy Policy</a>.
+                            </label>
+                        </div>
+
+                        <div class="flex items-start space-x-3 text-sm">
+                            <input type="checkbox" id="consent2"
+                                class="mt-1 form-checkbox h-4 w-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500 bg-neutral-800 border-neutral-700">
+                            <label for="consent2" class="flex-grow">
+                                I hereby agree to their <a href="#" class="text-blue-400 hover:underline">Privacy
+                                    Policy</a>.
+                            </label>
+                        </div>
+
+                        <div class="pr-2 text-xs leading-relaxed text-neutral-400">
+                            <p class="mb-2">We will keep your data so long as you allow us and we are bound by law. Your
+                                Data Protection rights are Access, Rectification, Erasure, Restriction of processing,
+                                Data Portability and Object. You might exercise them by written enquiry to USHUAÏA
+                                ENTERTAINMENT SL, AVDA. BARTOLOMÉ ROSSELLÓ 18, 07800 IBIZA (ISLAS BALEARES) or THE NIGHT
+                                LEAGUE SL.</p>
+                            <p class="mb-2">In case of disagreement, you might make a complaint to the Spanish Data
+                                Protection Agency (<a href="www.aepd.es"
+                                    class="text-blue-400 hover:underline">www.aepd.es</a>)</p>
+                            <p class="mb-2">Your data will not be transferred or processed internationally. The legal
+                                basis for processing your data is the consent given. This extra text is to make sure the
+                                scrollbar appears correctly and the button stays fixed below.</p>
+                            <p>By providing your consent, you are authorizing USUARIA ENTERTAINMENT SL and THE NIGHT
+                                LEAGUE SL to use your data to send you commercial information...</p>
+                            <p>You can revoke your consent at any time by sending an email to...</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 pt-0">
+                        <button
+                            class="w-full bg-blue-600 text-white py-2 rounded-full font-bold text-base shadow-lg hover:bg-blue-500 transition-colors">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="art-section" class="py-32 sm:py-40 md:py-48 text-center overflow-hidden relative ">
+        
+            <h2 id="art-text" class="text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-wider text-black absolute top-1/2 left-1/2"
+                style="transform: translate(-50%, -50%); opacity: 0;"> 
+                ART
+            </h2>
+        </div>
+        
+    
+    
+        <script>
+            window.addEventListener('scroll', function() {
+                const text = document.getElementById('art-text');
+                const section = document.getElementById('art-section');
+    
+                if (text && section) {
+                    const sectionTop = section.offsetTop;
+                    const scrollPos = window.scrollY;
+                    const vh = window.innerHeight; // Viewport ki height
+    
+                    let relativeScroll = scrollPos - sectionTop + (vh / 2);
+                    
+                    // --- 1. Opacity (Fade) Calculation ---
+                    const fadeRange = vh / 2; // Fade effect thoda aur area lega
+                    const distanceFromCenter = Math.abs(relativeScroll);
+                    let progress = 1 - (distanceFromCenter / fadeRange); // Ye 0 se 1 ke beech ki value hai
+                    progress = Math.max(0, Math.min(1, progress)); // Safety check
+    
+                    // Opacity ko text par apply karo
+                    text.style.opacity = progress;
+    
+                    
+                    // --- 2. Naya Scale Effect ---
+                    const minScale = 0.85; // Text chhota hoke 85% size ka hoga
+                    const maxScale = 1.0; // Center mein 100% size ka hoga
+                    
+                    // Progress (0 se 1) ke hisaab se scale calculate karo
+                    const currentScale = minScale + (maxScale - minScale) * progress;
+    
+    
+                    // --- 3. Parallax + Scale ko Transform mein lagao ---
+                    
+                    // Parallax scroll effect (40% speed)
+                    const parallaxTranslateY = relativeScroll * 0.4; 
+                    
+                    // Saare transforms ko ek saath lagao
+                    const transformValue = `translate(-50%, -50%) 
+                                          translateY(${parallaxTranslateY}px) 
+                                          scale(${currentScale})`;
+                    
+                    text.style.transform = transformValue;
+                }
+            });
+        </script>
+        <div class="w-full py-16 overflow-hidden pl-12 pr-4 md:pl-24 md:pr-10 relative z-10">
+            <div id="news-carousel-container"
+                class="flex overflow-x-auto space-x-6 pb-6 snap-x snap-mandatory scrollbar-hide cursor-grab"
+                style="scroll-behavior: smooth;">
+
+                <div
+                    class="news-carousel-item relative w-[340px] md:w-[400px] h-[580px] rounded-3xl overflow-hidden flex-shrink-0 snap-center shadow-lg">
+                    <img src="n1.avif" alt="Miss Monique" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-6 text-white flex flex-col justify-between items-center h-64">
+                        <div class="text-center"> <span
+                                class="inline-block bg-white/30 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">Article</span>
+                            <h3 class="text-2xl lg:text-3xl font-bold uppercase leading-tight mb-4">Watch: Miss Monique
+                                Live From DJ Prasant</h3>
+                        </div>
+                        <a href="#"
+                            class="inline-block bg-white text-black rounded-full px-7 py-2.5 font-semibold text-sm shadow-md hover:bg-gray-200 transition-colors">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="news-carousel-item relative w-[340px] md:w-[400px] h-[580px] rounded-3xl overflow-hidden flex-shrink-0 snap-center shadow-lg">
+                    <img src="n2.avif" alt="James Hype" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-6 text-white flex flex-col justify-between items-center h-64">
+                        <div class="text-center"> <span
+                                class="inline-block bg-white/30 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">Article</span>
+                            <h3 class="text-2xl lg:text-3xl font-bold uppercase leading-tight mb-4">Watch: James Hype
+                                Ibiza Classics Set Live From A Gym</h3>
+                        </div>
+                        <a href="#"
+                            class="inline-block bg-white text-black rounded-full px-7 py-2.5 font-semibold text-sm shadow-md hover:bg-gray-200 transition-colors">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="news-carousel-item relative w-[340px] md:w-[400px] h-[580px] rounded-3xl overflow-hidden flex-shrink-0 snap-center shadow-lg">
+                    <img src="n3.avif" alt="Indira Paganotto" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-6 text-white flex flex-col justify-between items-center h-64">
+                        <div class="text-center"> <span
+                                class="inline-block bg-white/30 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">Interview</span>
+                            <h3 class="text-2xl lg:text-3xl font-bold uppercase leading-tight mb-4">Indira Paganot to |
+                                The Road To Now</h3>
+                        </div>
+                        <a href="#"
+                            class="inline-block bg-white text-black rounded-full px-7 py-2.5 font-semibold text-sm shadow-md hover:bg-gray-200 transition-colors">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="news-carousel-item relative w-[340px] md:w-[400px] h-[580px] rounded-3xl overflow-hidden flex-shrink-0 snap-center shadow-lg">
+                    <img src="n4.avif" alt="DJ PRASHANTCrowd" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-6 text-white flex flex-col justify-between items-center h-64">
+                        <div class="text-center"> <span
+                                class="inline-block bg-white/30 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">News</span>
+                            <h3 class="text-2xl lg:text-3xl font-bold uppercase leading-tight mb-4">The DJ PRASHANT 2025
+                                Opening Party</h3>
+                        </div>
+                        <a href="#"
+                            class="inline-block bg-white text-black rounded-full px-7 py-2.5 font-semibold text-sm shadow-md hover:bg-gray-200 transition-colors">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="news-carousel-item relative w-[340px] md:w-[400px] h-[580px] rounded-3xl overflow-hidden flex-shrink-0 snap-center shadow-lg">
+                    <img src="n5.avif" alt="Club" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-6 text-white flex flex-col justify-between items-center h-64">
+                        <div class="text-center"> <span
+                                class="inline-block bg-white/30 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">Article</span>
+                            <h3 class="text-2xl lg:text-3xl font-bold uppercase leading-tight mb-4">Another Amazing Night:
+                                Weekly Review</h3>
+                        </div>
+                        <a href="#"
+                            class="inline-block bg-white text-black rounded-full px-7 py-2.5 font-semibold text-sm shadow-md hover:bg-gray-200 transition-colors">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="news-carousel-item relative w-[340px] md:w-[400px] h-[580px] rounded-3xl overflow-hidden flex-shrink-0 snap-center shadow-lg">
+                    <img src="n6.avif" alt="DJ" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-6 text-white flex flex-col justify-between items-center h-64">
+                        <div class="text-center"> <span
+                                class="inline-block bg-white/30 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">Interview</span>
+                            <h3 class="text-2xl lg:text-3xl font-bold uppercase leading-tight mb-4">Catching Up With The
+                                Martinez Brothers</h3>
+                        </div>
+                        <a href="#"
+                            class="inline-block bg-white text-black rounded-full px-7 py-2.5 font-semibold text-sm shadow-md hover:bg-gray-200 transition-colors">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="flex justify-center mt-8">
+                <a href="#"
+                    class="inline-block bg-neutral-200 text-black rounded-full px-8 py-3 font-semibold text-sm hover:bg-white transition-colors">
+                    Show All
+                </a>
+            </div>
+        </div>
+
+        <footer class="w-full text-black py-16 px-4 sm:px-8 lg:px-12">
+            <div class="max-w-7xl mx-auto">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <div class="lg:col-span-2">
+                        <h3 class="text-lg font-normal max-w-xs mb-6">Sign-up now to receive pre sale access and 20% off
+                            merch.</h3>
+                        <a href="#"
+                            class="inline-block bg-blue-600 text-white font-bold py-3 px-10 rounded-full text-base shadow-lg hover:bg-blue-500 transition-colors">
+                            Subscribe
+                        </a>
+                    </div>
+
+                    <div>
+                        <h4 class="text-sm font-semibold uppercase text-gray-500 tracking-wider mb-4">Social</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#"
+                                    class="text-base font-normal text-black hover:text-blue-600">Instagram</a></li>
+                            <li><a href="#" class="text-base font-normal text-black hover:text-blue-600">TikTok</a></li>
+                            <li><a href="#" class="text-base font-normal text-black hover:text-blue-600">X</a></li>
+                            <li><a href="#" class="text-base font-normal text-black hover:text-blue-600">Facebook</a>
+                            </li>
+                            <li><a href="#" class="text-base font-normal text-black hover:text-blue-600">Pinterest</a>
+                            </li>
+                            <li><a href="#" class="text-base font-normal text-black hover:text-blue-600">Snapchat</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-sm font-semibold uppercase text-gray-500 tracking-wider mb-4">Music</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-base font-normal text-black hover:text-blue-600">Spotify</a></li>
+                            <li><a href="#" class="text-base font-normal text-black hover:text-blue-600">Apple Music</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-base font-normal text-black hover:text-blue-600">Soundcloud</a></li>
+                            <li><a href="#" class="text-base font-normal text-black hover:text-blue-600">YouTube</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="my-12 border-gray-300">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <div class="lg:col-span-2">
+                        <p class="text-xs text-gray-600 mb-2">Powered By</p>
+                        <img src="https://hiibiza.com/img/tnl-logo-footer.svg" alt="TNL Logo" class="h-6 mb-6">
+                        <p class="text-xs text-gray-600">&copy; 2017 - 2025 Ushuaïa Entertainment, SL All rights reserved
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-sm font-semibold uppercase text-gray-500 tracking-wider mb-4">Legal</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-base font-normal text-black hover:text-blue-600">Terms and
+                                    Conditions</a></li>
+                            <li><a href="#" class="text-base font-normal text-black hover:text-blue-600">Protection of
+                                    Personal Data</a></li>
+                            <li><a href="#" class="text-base font-normal text-black hover:text-blue-600">Cookies
+                                    Policy</a></li>
+                            <li><a href="#" class="text-base font-normal text-black hover:text-blue-600">Cookie
+                                    Settings</a></li>
+                            <li><a href="#" class="text-base font-normal text-black hover:text-blue-600">Privacy
+                                    Policy</a></li>
+                            <li><a href="#" class="text-base font-normal text-black hover:text-blue-600">Refund
+                                    Policy</a></li>
+                            <li><a href="#" class="text-base font-normal text-black hover:text-blue-600">Integrated
+                                    Policy</a></li>
+                            <li><a href="#" class="text-base font-normal text-black hover:text-blue-600">Internal
+                                    Information System</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-sm font-semibold uppercase text-gray-500 tracking-wider mb-4">Community</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-base font-normal text-black hover:text-blue-600">FAQs /
+                                    Contact</a></li>
+                            <li><a href="#" class="text-base font-normal text-black hover:text-blue-600">About</a></li>
+                            <li><a href="#" class="text-base font-normal text-black hover:text-blue-600">VIP Tables</a>
+                            </li>
+                            <li><a href="#" class="text-base font-normal text-black hover:text-blue-600">VIP Info: +34
+                                    971 129 418</a></li>
+                            <li><a href="#" class="text-base font-normal text-black hover:text-blue-600">Store</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
+        <section>
+            <button id="cookieTrigger"
+                class="fixed bottom-6 left-6 w-12 h-12 bg-blue-600 text-white text-2xl rounded-full flex items-center justify-center shadow-md hover:scale-110 hover:bg-blue-700 transition-all duration-300 z-[999]">
+                🍪
+            </button>
+
+            <div id="cookiePopup"
+                class="hidden fixed inset-0 bg-black/60 flex justify-center items-center opacity-0 pointer-events-none transition-opacity duration-400">
+                <div
+                    class="bg-white w-[500px] max-h-[90vh] overflow-y-auto rounded-lg p-6 shadow-xl relative transform -translate-y-5 transition-transform duration-400">
+
+                    <div class="flex justify-between items-center">
+                        <h2 class="font-bold tracking-wide text-lg">
+                            <span>Hi</span> IBIZA<sup>®</sup>
+                        </h2>
+                        <button id="closePopup" class="text-2xl cursor-pointer">&times;</button>
+                    </div>
+
+                    <div class="mt-3 text-sm text-gray-700 leading-relaxed">
+                        <h3 class="mb-2 text-base font-semibold">Privacy Preference Center</h3>
+                        <p>
+                            When you visit any website, it may store or retrieve information on your browser,
+                            mostly in the form of cookies. This information might be about you, your preferences
+                            or your device and is mostly used to make the site work as you expect it to. The
+                            information
+                            does not usually directly identify you, but it can give you a more personalized web
+                            experience.
+                            Because we respect your right to privacy, you can choose not to allow some types of
+                            cookies.
+                            Click on the different category headings to find out more and change our default
+                            settings.
+                            However, blocking some types of cookies may impact your experience of the site and
+                            the services
+                            we are able to offer.
+                        </p>
+                        <a href="#" class="text-blue-600 underline text-xs">More information</a>
+
+                        <h4 class="mt-4 mb-2 font-bold text-sm">Manage Consent Preferences</h4>
+
+                        <div class="divide-y divide-gray-200">
+                            <div class="flex justify-between items-center py-2">
+                                <span>Functional Cookies</span>
+                                <label class="relative inline-block w-11 h-6">
+                                    <input type="checkbox" checked class="hidden peer">
+                                    <span
+                                        class="absolute inset-0 bg-gray-300 rounded-full transition peer-checked:bg-blue-600 before:content-[''] before:absolute before:h-[18px] before:w-[18px] before:left-[3px] before:bottom-[3px] before:bg-white before:rounded-full before:transition-transform peer-checked:before:translate-x-[20px]"></span>
+                                </label>
+                            </div>
+
+                            <div class="flex justify-between items-center py-2">
+                                <span>Performance Cookies</span>
+                                <label class="relative inline-block w-11 h-6">
+                                    <input type="checkbox" checked class="hidden peer">
+                                    <span
+                                        class="absolute inset-0 bg-gray-300 rounded-full transition peer-checked:bg-blue-600 before:content-[''] before:absolute before:h-[18px] before:w-[18px] before:left-[3px] before:bottom-[3px] before:bg-white before:rounded-full before:transition-transform peer-checked:before:translate-x-[20px]"></span>
+                                </label>
+                            </div>
+
+                            <div class="flex justify-between items-center py-2">
+                                <span>Targeting Cookies</span>
+                                <label class="relative inline-block w-11 h-6">
+                                    <input type="checkbox" checked class="hidden peer">
+                                    <span
+                                        class="absolute inset-0 bg-gray-300 rounded-full transition peer-checked:bg-blue-600 before:content-[''] before:absolute before:h-[18px] before:w-[18px] before:left-[3px] before:bottom-[3px] before:bg-white before:rounded-full before:transition-transform peer-checked:before:translate-x-[20px]"></span>
+                                </label>
+                            </div>
+
+                            <div class="flex justify-between items-center py-2">
+                                <span>Strictly Necessary Cookies</span>
+                                <span class="text-gray-500 text-xs">Always Active</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between mt-5">
+                        <button id="rejectAll"
+                            class="flex-1 mx-1 py-2 rounded-md bg-gray-200 font-semibold hover:bg-gray-300 transition">Reject
+                            All</button>
+                        <button id="confirmChoices"
+                            class="flex-1 mx-1 py-2 rounded-md bg-blue-600 text-white font-semibold hover:bg-blue-700 transition">Confirm
+                            My Choices</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div
+        class="fixed bottom-6 left-6 z-50 w-12 h-12 bg-white/50 rounded-full shadow-lg backdrop-blur-sm border border-white/20">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // --- 3D Carousel Logic ---
+        const CARDS = document.querySelectorAll('.carousel-card');
+        const DOTS_CONTAINER = document.getElementById('new-pagination-dots');
+        const TOTAL_CARDS = CARDS.length;
+
+        let activeIndex = 0;
+        let isDragging = false;
+        let startX = 0;
+        let currentX = 0;
+        const SLIDE_THRESHOLD = 100;
+        const MAX_TRANS_X = 150;
+
+        function getCardTransformation(index) {
+            let offset = index - activeIndex;
+
+            if (offset > TOTAL_CARDS / 2) {
+                offset -= TOTAL_CARDS;
+            } else if (offset < -TOTAL_CARDS / 2) {
+                offset += TOTAL_CARDS;
+            }
+
+            const absOffset = Math.abs(offset);
+            const BASE_PIXEL_OFFSET = 20;
+            const SCALE_FACTOR = 0.146667;
+            const scaleValue = 1 - (SCALE_FACTOR * absOffset);
+            const translateYValue = -(BASE_PIXEL_OFFSET * absOffset);
+
+            let config = {
+                scale: 0.56,
+                translateY: -200,
+                translateZ: 0,
+                opacity: 0,
+                zIndex: 1,
+                brightness: 0.5,
+                translateX: 0,
+                rotateZ: 0
+            };
+
+            if (absOffset < 3) {
+                config = {
+                    scale: scaleValue,
+                    translateY: translateYValue,
+                    translateZ: 100 - (absOffset * 30),
+                    opacity: 1,
+                    zIndex: 100 - absOffset,
+                    brightness: 1 - (absOffset * 0.1),
+                    translateX: 0,
+                    rotateZ: 0
+                };
+            }
+
+            if (offset < 0) {
+                config = {
+                    scale: 0.8,
+                    translateY: 0,
+                    translateZ: 0,
+                    opacity: 0,
+                    zIndex: 1,
+                    brightness: 0.5,
+                    translateX: -1000,
+                    rotateZ: -10
+                };
+            }
+            return config;
+        }
+
+        function setIndex(newIndex) {
+            activeIndex = (newIndex % TOTAL_CARDS + TOTAL_CARDS) % TOTAL_CARDS;
+        }
+
+        function updateCardStyles() {
+            CARDS.forEach((card, index) => {
+                const {
+                    scale,
+                    translateY,
+                    translateZ,
+                    opacity,
+                    zIndex,
+                    brightness,
+                    translateX = 0,
+                    rotateZ = 0
+                } = getCardTransformation(index);
+
+                card.style.transform = `
+                    translate(-50%, -50%) 
+                    scale3d(${scale}, ${scale}, 1) 
+                    translateY(${translateY}px) 
+                    translateZ(${translateZ}px)
+                    translateX(${translateX}px) 
+                    rotateZ(${rotateZ}deg)
+                `;
+                card.style.opacity = opacity;
+                card.style.zIndex = zIndex;
+                card.style.filter = `brightness(${brightness})`;
+                card.style.pointerEvents = index === activeIndex ? 'auto' : 'none';
+            });
+            updateDots();
+        }
+
+        function handleSlide(direction) {
+            if (direction === 'next') {
+                setIndex(activeIndex + 1);
+            } else if (direction === 'prev') {
+                setIndex(activeIndex - 1);
+            }
+            updateCardStyles();
+        }
+
+        function temporaryDragEffect(diffX) {
+            const movement = Math.min(Math.max(diffX, -MAX_TRANS_X), MAX_TRANS_X);
+
+            CARDS[activeIndex].style.transform = `
+                translate(-50%, -50%) 
+                scale3d(1, 1, 1) 
+                translateY(0px) 
+                translateZ(100px)
+                translateX(${movement * 0.5}px) 
+                rotateZ(0deg)
+            `;
+
+            const nextIndex = (activeIndex + 1) % TOTAL_CARDS;
+            CARDS[nextIndex].style.transform = `
+                translate(-50%, -50%) 
+                scale3d(0.98, 0.98, 1) 
+                translateY(-15px) 
+                translateZ(80px) 
+                translateX(${movement * 0.2}px)
+                rotateZ(0deg)
+            `;
+        }
+
+        CARDS.forEach(card => {
+            const startDrag = (clientX) => {
+                if (parseInt(card.dataset.index) !== activeIndex) return;
+                isDragging = true;
+                startX = clientX;
+                card.style.cursor = 'grabbing';
+            };
+
+            card.addEventListener('mousedown', (e) => {
+                startDrag(e.clientX);
+                e.preventDefault();
+            });
+
+            card.addEventListener('touchstart', (e) => {
+                startDrag(e.touches[0].clientX);
+            });
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            currentX = e.clientX;
+            const diffX = currentX - startX;
+            temporaryDragEffect(diffX);
+        });
+
+        document.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            currentX = e.touches[0].clientX;
+            const diffX = currentX - startX;
+            temporaryDragEffect(diffX);
+        });
+
+        const endDrag = () => {
+            if (!isDragging) return;
+            isDragging = false;
+            CARDS[activeIndex].style.cursor = 'grab';
+
+            const diffX = currentX - startX;
+
+            if (diffX > SLIDE_THRESHOLD) {
+                handleSlide('prev');
+            } else if (diffX < -SLIDE_THRESHOLD) {
+                handleSlide('next');
+            } else {
+                updateCardStyles();
+            }
+
+            startX = 0;
+            currentX = 0;
+        };
+
+        document.addEventListener('mouseup', endDrag);
+        document.addEventListener('touchend', endDrag);
+
+        function updateDots() {
+            DOTS_CONTAINER.innerHTML = '';
+            CARDS.forEach((_, index) => {
+                const dot = document.createElement('button');
+                dot.classList.add('w-3', 'h-3', 'rounded-full', 'mx-1', 'transition-all', 'focus:outline-none');
+                dot.style.backgroundColor = index === activeIndex ? 'black' : 'rgba(0, 0, 0, 0.5)';
+                dot.addEventListener('click', () => {
+                    activeIndex = index;
+                    updateCardStyles();
+                });
+                DOTS_CONTAINER.appendChild(dot);
+            });
+        }
+        // --- End 3D Carousel Logic ---
+
+
+        // --- Mobile Menu Logic ---
+        const menuOpenBtn = document.getElementById('menu-open-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const body = document.body;
+        const headerNav = document.getElementById('header-nav');
+        const headerLogo = document.getElementById('header-logo');
+        let isMenuOpen = false;
+
+        function openMenu() {
+            mobileMenu.classList.remove('-translate-y-[150%]');
+            mobileMenu.classList.add('translate-y-0');
+            body.classList.add('overflow-hidden');
+
+            headerNav.classList.remove('bg-white/90', 'backdrop-blur-md', 'rounded-full');
+            headerNav.classList.add('bg-black', 'rounded-t-3xl');
+            headerLogo.classList.remove('text-black');
+            headerLogo.classList.add('text-white');
+            menuOpenBtn.classList.remove('bg-gray-200/80', 'text-black', 'hover:bg-gray-300');
+            menuOpenBtn.classList.add('bg-zinc-800', 'text-white', 'hover:bg-zinc-700');
+            menuOpenBtn.textContent = 'Close';
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('translate-y-0');
+            mobileMenu.classList.add('-translate-y-[150%]');
+            body.classList.remove('overflow-hidden');
+
+            headerNav.classList.add('bg-white/90', 'backdrop-blur-md', 'rounded-full');
+            headerNav.classList.remove('bg-black', 'rounded-t-3xl');
+            headerLogo.classList.add('text-black');
+            headerLogo.classList.remove('text-white');
+            menuOpenBtn.classList.add('bg-gray-200/80', 'text-black', 'hover:bg-gray-300');
+            menuOpenBtn.classList.remove('bg-zinc-800', 'text-white', 'hover:bg-zinc-700');
+            menuOpenBtn.textContent = 'Menu';
+        }
+
+        menuOpenBtn.addEventListener('click', () => {
+            if (isMenuOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+            isMenuOpen = !isMenuOpen;
+        });
+        // --- End Mobile Menu Logic ---
+
+
+        // --- Page Initialization Logic ---
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Initialize Mobile Menu Splide
+            const menuSplide = new Splide('.nav-card-slider', {
+                type: 'loop',
+                autoWidth: true,
+                gap: '1rem',
+                pagination: true,
+                arrows: false,
+                breakpoints: {
+                    640: {
+                        perPage: 1,
+                    },
+                },
+            });
+            menuSplide.mount();
+
+            // --- Horizontal Carousel Setup Function ---
+            function setupCarousel(containerId, dotsId, itemClass) {
+                const container = document.getElementById(containerId);
+                const dotsContainer = document.getElementById(dotsId);
+
+                if (!container) {
+                    return;
+                }
+                if (dotsContainer) {
+                    const items = container.querySelectorAll(itemClass);
+                    if (items.length === 0) return;
+
+                    dotsContainer.innerHTML = '';
+                    items.forEach((_, index) => {
+                        const dot = document.createElement('button');
+                        dot.setAttribute('aria-label', `Go to item ${index + 1}`);
+                        dot.className = 'w-2 h-2 rounded-full bg-neutral-600 transition-colors duration-300';
+
+                        if (index === 0) {
+                            dot.classList.remove('bg-neutral-600');
+                            dot.classList.add('bg-white');
+                        }
+
+                        dot.addEventListener('click', () => {
+                            items[index].scrollIntoView({
+                                behavior: 'smooth',
+                                inline: 'center',
+                                block: 'nearest'
+                            });
+                        });
+                        dotsContainer.appendChild(dot);
+                    });
+
+                    const dots = dotsContainer.querySelectorAll('button');
+
+                    container.addEventListener('scroll', () => {
+                        let activeIndex = 0;
+                        let minDistance = Infinity;
+                        const containerCenter = container.scrollLeft + container.clientWidth / 2;
+                        const itemsForDots = container.querySelectorAll(itemClass);
+
+                        itemsForDots.forEach((item, index) => {
+                            const itemCenter = item.offsetLeft + item.clientWidth / 2;
+                            const distance = Math.abs(itemCenter - containerCenter);
+                            if (distance < minDistance) {
+                                minDistance = distance;
+                                activeIndex = index;
+                            }
+                        });
+
+                        dots.forEach((dot, index) => {
+                            if (index === activeIndex) {
+                                dot.classList.remove('bg-neutral-600');
+                                dot.classList.add('bg-white');
+                            } else {
+                                dot.classList.remove('bg-white');
+                                dot.classList.add('bg-neutral-600');
+                            }
+                        });
+                    }, {
+                        passive: true
+                    });
+                }
+            }
+
+            // --- Drag-to-Scroll Setup Function ---
+            function setupDragToScroll(containerId) {
+                const slider = document.getElementById(containerId);
+                if (!slider) return;
+
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+
+                const endDrag = () => {
+                    if (!isDown) return;
+                    isDown = false;
+                    slider.classList.remove('cursor-grabbing');
+                    slider.classList.add('cursor-grab');
+                    slider.style.scrollBehavior = 'smooth';
+                };
+
+                slider.addEventListener('mousedown', (e) => {
+                    if (e.target.closest('button') || e.target.closest('a')) {
+                        return;
+                    }
+                    isDown = true;
+                    slider.classList.add('cursor-grabbing');
+                    slider.classList.remove('cursor-grab');
+                    slider.style.scrollBehavior = 'auto';
+
+                    startX = e.pageX - slider.offsetLeft;
+                    scrollLeft = slider.scrollLeft;
+                });
+
+                slider.addEventListener('mouseleave', endDrag);
+                slider.addEventListener('mouseup', endDrag);
+
+                slider.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - slider.offsetLeft;
+                    const walk = (x - startX);
+                    slider.scrollLeft = scrollLeft - walk;
+                });
+            }
+
+            // Initialize T-Shirt Slider
+            setupCarousel('slider-container', 'pagination-dots', '.slider-item');
+            setupDragToScroll('slider-container');
+
+            // Initialize Audio Slider
+            setupCarousel('audio-carousel-container', 'audio-pagination-dots', '.audio-carousel-item');
+            setupDragToScroll('audio-carousel-container');
+
+            // Initialize News Slider
+            setupDragToScroll('news-carousel-container');
+
+            // --- Parallax Text Fade Effect ---
+            const textElements = document.querySelectorAll('.parallax-text-heading');
+            if (textElements.length > 0) {
+                window.addEventListener('scroll', () => {
+                    const viewportHeight = window.innerHeight;
+                    const fadeStartPoint = viewportHeight / 2;
+
+                    textElements.forEach(textElement => {
+                        const {
+                            top
+                        } = textElement.getBoundingClientRect();
+                        let opacity;
+                        if (top < fadeStartPoint) {
+                            opacity = top / fadeStartPoint;
+                        } else {
+                            opacity = 1;
+                        }
+                        opacity = Math.max(0, Math.min(1, opacity));
+                        textElement.style.opacity = opacity;
+                    });
+                });
+            }
+
+            // --- Typing Effect Logic ---
+            const words = ["CONNECTING", "CULTURES"];
+            const typingElement = document.getElementById('typing-effect');
+            if (typingElement) {
+                let wordIndex = 0;
+                let letterIndex = 0;
+                let isDeleting = false;
+                const typeSpeed = 150;
+                const deleteSpeed = 100;
+                const delayBetweenWords = 2000;
+
+                function typeEffect() {
+                    const currentWord = words[wordIndex];
+                    if (isDeleting) {
+                        typingElement.textContent = currentWord.substring(0, letterIndex - 1);
+                        letterIndex--;
+                    } else {
+                        typingElement.textContent = currentWord.substring(0, letterIndex + 1);
+                        letterIndex++;
+                    }
+                    if (!isDeleting && letterIndex === currentWord.length) {
+                        isDeleting = true;
+                        setTimeout(typeEffect, delayBetweenWords);
+                    } else if (isDeleting && letterIndex === 0) {
+                        isDeleting = false;
+                        wordIndex = (wordIndex + 1) % words.length;
+                        setTimeout(typeEffect, 500);
+                    } else {
+                        const speed = isDeleting ? deleteSpeed : typeSpeed;
+                        setTimeout(typeEffect, speed);
+                    }
+                }
+                typeEffect();
+            }
+
+            // --- Hero Parallax Content Logic ---
+            const heroSection = document.getElementById('hero-section');
+            const parallaxContent = document.getElementById('parallax-content');
+
+            if (heroSection && parallaxContent) {
+                const parallaxFactor = 0.7;
+                const contentRectInitial = parallaxContent.getBoundingClientRect();
+                const heroRectInitial = heroSection.getBoundingClientRect();
+                const scrollYWhenCentered = window.scrollY + heroRectInitial.top + parallaxContent.offsetTop + (parallaxContent.offsetHeight / 2) - (window.innerHeight / 2);
+
+                window.addEventListener('scroll', () => {
+                    const currentScrollY = window.scrollY;
+                    const heroRect = heroSection.getBoundingClientRect();
+                    if (heroRect.bottom > 0 && heroRect.top < window.innerHeight) {
+                        const scrollDifference = currentScrollY - scrollYWhenCentered;
+                        const translateYValue = Math.max(0, scrollDifference * parallaxFactor);
+                        parallaxContent.style.transform = `translateY(${translateYValue}px)`;
+                    } else {}
+                });
+                window.dispatchEvent(new Event('scroll'));
+            }
+
+            // --- Initialize 3D Carousel on Load ---
+            updateCardStyles();
+
+        });
+        // --- End Page Initialization Logic ---
+
+
+        // --- Cookie Popup Logic ---
+        const cookieTrigger = document.getElementById("cookieTrigger");
+        const cookiePopup = document.getElementById("cookiePopup");
+        const closePopup = document.getElementById("closePopup");
+        const rejectAll = document.getElementById("rejectAll");
+        const confirmChoices = document.getElementById("confirmChoices");
+
+        cookieTrigger.addEventListener("click", () => {
+            cookiePopup.classList.remove("hidden");
+            setTimeout(() => {
+                cookiePopup.classList.remove("opacity-0", "pointer-events-none");
+                cookiePopup.classList.add("opacity-100");
+                cookiePopup.querySelector("div").classList.remove("-translate-y-5");
+                cookiePopup.querySelector("div").classList.add("translate-y-0");
+            }, 10);
+        });
+
+        function hidePopup() {
+            cookiePopup.classList.remove("opacity-100");
+            cookiePopup.classList.add("opacity-0", "pointer-events-none");
+            cookiePopup.querySelector("div").classList.add("-translate-y-5");
+            setTimeout(() => {
+                cookiePopup.classList.add("hidden");
+            }, 400);
+        }
+
+        closePopup.addEventListener("click", hidePopup);
+        rejectAll.addEventListener("click", () => {
+            alert("All cookies rejected!");
+            hidePopup();
+        });
+        confirmChoices.addEventListener("click", () => {
+            alert("Your choices have been saved!");
+            hidePopup();
+        });
+        // --- End Cookie Popup Logic ---
+    </script>
+
+</body>
+
+</html>
