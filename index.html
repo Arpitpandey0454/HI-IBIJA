@@ -397,44 +397,33 @@
             </div>
         </section>
 
-        <div id="residents-section" class="py-32 sm:py-40 md:py-48 text-center overflow-hidden relative">
+        <div id="residents-section" class="py-32 sm:py-40 md:py-48 text-center overflow-hidden relative ">
         
             <h2 id="residents-text" class="text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-wider text-black absolute top-1/2 left-1/2"
-                style="transform: translate(-50%, -50%); opacity: 0;"> 
+                style="transform: translate(-50%, -50%); opacity: 1; transition: opacity 0.1s linear;">
                 S25RESIDENTS
             </h2>
         </div>
-       
+        
     
     
         <script>
             window.addEventListener('scroll', function() {
-                // IDs "RESIDENTS" waale hain
+                // IDs ko "RESIDENTS" waale se badal diya hai
                 const text = document.getElementById('residents-text');
                 const section = document.getElementById('residents-section');
     
                 if (text && section) {
                     const sectionTop = section.offsetTop;
                     const scrollPos = window.scrollY;
-                    const vh = window.innerHeight; // Viewport ki height
     
-                    // Center se relative scroll position
-                    let relativeScroll = scrollPos - sectionTop + (vh / 2);
+                    let relativeScroll = scrollPos - sectionTop + (window.innerHeight / 2);
     
-                    // --- 1. Parallax Effect ---
-                    const transformValue = `translate(-50%, -50%) translateY(${relativeScroll * 0.4}px)`;
-                    text.style.transform = transformValue;
-    
-                    
-                    // --- 2. Naya Fade-in/Fade-out Effect ---
-                    const fadeRange = vh / 2.5; // Fade hone ka area
-                    const distanceFromCenter = Math.abs(relativeScroll);
-                    let opacity = 1 - (distanceFromCenter / fadeRange);
-    
-                    // Opacity ko 0 aur 1 ke beech rakho
-                    opacity = Math.max(0, Math.min(1, opacity));
-    
-                    text.style.opacity = opacity;
+                    if (relativeScroll >= -window.innerHeight && relativeScroll <= section.offsetHeight + window.innerHeight) {
+                        
+                        
+                        text.style.transform = `translate(-50%, -50%) translateY(${relativeScroll * 0.4}px)`;
+                    }
                 }
             });
         </script>
@@ -555,47 +544,37 @@
 </div>
 
     
-        <div id="ss25-section" class="py-32 sm:py-40 md:py-48 text-center overflow-hidden relative ">
+<div id="ss25-section" class="py-32 sm:py-40 md:py-48 text-center overflow-hidden relative ">
         
-            <h2 id="ss25-text" class="text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-wider text-black absolute top-1/2 left-1/2"
-                style="transform: translate(-50%, -50%); opacity: 0;"> 
-                SS25
-            </h2>
-        </div>
-       
-    
-    
-        <script>
-            window.addEventListener('scroll', function() {
-                // IDs "SS25" waale hain
-                const text = document.getElementById('ss25-text');
-                const section = document.getElementById('ss25-section');
-    
-                if (text && section) {
-                    const sectionTop = section.offsetTop;
-                    const scrollPos = window.scrollY;
-                    const vh = window.innerHeight; // Viewport ki height
-    
-                    // Center se relative scroll position
-                    let relativeScroll = scrollPos - sectionTop + (vh / 2);
-    
-                    // --- 1. Parallax Effect ---
-                    const transformValue = `translate(-50%, -50%) translateY(${relativeScroll * 0.4}px)`;
-                    text.style.transform = transformValue;
-    
-                    
-                    // --- 2. Naya Fade-in/Fade-out Effect ---
-                    const fadeRange = vh / 2.5; // Fade hone ka area
-                    const distanceFromCenter = Math.abs(relativeScroll);
-                    let opacity = 1 - (distanceFromCenter / fadeRange);
-    
-                    // Opacity ko 0 aur 1 ke beech rakho
-                    opacity = Math.max(0, Math.min(1, opacity));
-    
-                    text.style.opacity = opacity;
-                }
-            });
-        </script>
+    <h2 id="ss25-text" class="text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-wider text-black absolute top-1/2 left-1/2"
+        style="transform: translate(-50%, -50%); opacity: 1; transition: opacity 0.1s linear;">
+        SS25
+    </h2>
+</div>
+
+
+
+<script>
+    window.addEventListener('scroll', function() {
+        const text = document.getElementById('ss25-text');
+        const section = document.getElementById('ss25-section');
+
+        if (text && section) {
+            const sectionTop = section.offsetTop;
+            const scrollPos = window.scrollY;
+
+           
+            let relativeScroll = scrollPos - sectionTop + (window.innerHeight / 2);
+
+           
+            if (relativeScroll >= -window.innerHeight && relativeScroll <= section.offsetHeight + window.innerHeight) {
+                
+               
+                text.style.transform = `translate(-50%, -50%) translateY(${relativeScroll * 0.4}px)`;
+            }
+        }
+    });
+</script>
 
        <div class="relative w-full z-10">
     <div id="slider-container"
@@ -824,40 +803,30 @@
         <div id="music-section" class="py-32 sm:py-40 md:py-48 text-center overflow-hidden relative ">
         
             <h2 id="music-text" class="text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-wider text-black absolute top-1/2 left-1/2"
-                style="transform: translate(-50%, -50%); opacity: 0;"> 
+                style="transform: translate(-50%, -50%); opacity: 1; transition: opacity 0.1s linear;">
                 MUSIC
             </h2>
         </div>
        
     
+    
         <script>
             window.addEventListener('scroll', function() {
-                // IDs "MUSIC" waale hain
+               
                 const text = document.getElementById('music-text');
                 const section = document.getElementById('music-section');
     
                 if (text && section) {
                     const sectionTop = section.offsetTop;
                     const scrollPos = window.scrollY;
-                    const vh = window.innerHeight; // Viewport ki height
     
-                    // Center se relative scroll position
-                    let relativeScroll = scrollPos - sectionTop + (vh / 2);
+                    let relativeScroll = scrollPos - sectionTop + (window.innerHeight / 2);
     
-                    // --- 1. Parallax Effect ---
-                    const transformValue = `translate(-50%, -50%) translateY(${relativeScroll * 0.4}px)`;
-                    text.style.transform = transformValue;
-    
-                    
-                    // --- 2. Naya Fade-in/Fade-out Effect ---
-                    const fadeRange = vh / 2.5; // Fade hone ka area
-                    const distanceFromCenter = Math.abs(relativeScroll);
-                    let opacity = 1 - (distanceFromCenter / fadeRange);
-    
-                    // Opacity ko 0 aur 1 ke beech rakho
-                    opacity = Math.max(0, Math.min(1, opacity));
-    
-                    text.style.opacity = opacity;
+                    if (relativeScroll >= -window.innerHeight && relativeScroll <= section.offsetHeight + window.innerHeight) {
+                        
+                       
+                        text.style.transform = `translate(-50%, -50%) translateY(${relativeScroll * 0.4}px)`;
+                    }
                 }
             });
         </script>
@@ -1014,41 +983,30 @@
         <div id="subscribe-section" class="py-32 sm:py-40 md:py-48 text-center overflow-hidden relative ">
         
             <h2 id="subscribe-text" class="text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-wider text-black absolute top-1/2 left-1/2"
-                style="transform: translate(-50%, -50%); opacity: 0;"> 
+                style="transform: translate(-50%, -50%); opacity: 1; transition: opacity 0.1s linear;">
                 SUBSCRIBE
             </h2>
         </div>
-       
+      
     
     
         <script>
             window.addEventListener('scroll', function() {
-                // IDs "SUBSCRIBE" waale hain
+                
                 const text = document.getElementById('subscribe-text');
                 const section = document.getElementById('subscribe-section');
     
                 if (text && section) {
                     const sectionTop = section.offsetTop;
                     const scrollPos = window.scrollY;
-                    const vh = window.innerHeight; // Viewport ki height
     
-                    // Center se relative scroll position
-                    let relativeScroll = scrollPos - sectionTop + (vh / 2);
+                    let relativeScroll = scrollPos - sectionTop + (window.innerHeight / 2);
     
-                    // --- 1. Parallax Effect ---
-                    const transformValue = `translate(-50%, -50%) translateY(${relativeScroll * 0.4}px)`;
-                    text.style.transform = transformValue;
-    
+                    if (relativeScroll >= -window.innerHeight && relativeScroll <= section.offsetHeight + window.innerHeight) {
+                        
                     
-                    // --- 2. Naya Fade-in/Fade-out Effect ---
-                    const fadeRange = vh / 2.5; // Fade hone ka area
-                    const distanceFromCenter = Math.abs(relativeScroll);
-                    let opacity = 1 - (distanceFromCenter / fadeRange);
-    
-                    // Opacity ko 0 aur 1 ke beech rakho
-                    opacity = Math.max(0, Math.min(1, opacity));
-    
-                    text.style.opacity = opacity;
+                        text.style.transform = `translate(-50%, -50%) translateY(${relativeScroll * 0.4}px)`;
+                    }
                 }
             });
         </script>
@@ -1139,54 +1097,29 @@
         <div id="art-section" class="py-32 sm:py-40 md:py-48 text-center overflow-hidden relative ">
         
             <h2 id="art-text" class="text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-wider text-black absolute top-1/2 left-1/2"
-                style="transform: translate(-50%, -50%); opacity: 0;"> 
+                style="transform: translate(-50%, -50%); opacity: 1; transition: opacity 0.1s linear;">
                 ART
             </h2>
         </div>
-        
-    
+      
     
         <script>
             window.addEventListener('scroll', function() {
+                // IDs ko "ART" waale se badal diya hai
                 const text = document.getElementById('art-text');
                 const section = document.getElementById('art-section');
     
                 if (text && section) {
                     const sectionTop = section.offsetTop;
                     const scrollPos = window.scrollY;
-                    const vh = window.innerHeight; // Viewport ki height
     
-                    let relativeScroll = scrollPos - sectionTop + (vh / 2);
-                    
-                    // --- 1. Opacity (Fade) Calculation ---
-                    const fadeRange = vh / 2; // Fade effect thoda aur area lega
-                    const distanceFromCenter = Math.abs(relativeScroll);
-                    let progress = 1 - (distanceFromCenter / fadeRange); // Ye 0 se 1 ke beech ki value hai
-                    progress = Math.max(0, Math.min(1, progress)); // Safety check
+                    let relativeScroll = scrollPos - sectionTop + (window.innerHeight / 2);
     
-                    // Opacity ko text par apply karo
-                    text.style.opacity = progress;
-    
-                    
-                    // --- 2. Naya Scale Effect ---
-                    const minScale = 0.85; // Text chhota hoke 85% size ka hoga
-                    const maxScale = 1.0; // Center mein 100% size ka hoga
-                    
-                    // Progress (0 se 1) ke hisaab se scale calculate karo
-                    const currentScale = minScale + (maxScale - minScale) * progress;
-    
-    
-                    // --- 3. Parallax + Scale ko Transform mein lagao ---
-                    
-                    // Parallax scroll effect (40% speed)
-                    const parallaxTranslateY = relativeScroll * 0.4; 
-                    
-                    // Saare transforms ko ek saath lagao
-                    const transformValue = `translate(-50%, -50%) 
-                                          translateY(${parallaxTranslateY}px) 
-                                          scale(${currentScale})`;
-                    
-                    text.style.transform = transformValue;
+                    if (relativeScroll >= -window.innerHeight && relativeScroll <= section.offsetHeight + window.innerHeight) {
+                        
+                       
+                        text.style.transform = `translate(-50%, -50%) translateY(${relativeScroll * 0.4}px)`;
+                    }
                 }
             });
         </script>
@@ -1501,7 +1434,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        // --- 3D Carousel Logic ---
+      
         const CARDS = document.querySelectorAll('.carousel-card');
         const DOTS_CONTAINER = document.getElementById('new-pagination-dots');
         const TOTAL_CARDS = CARDS.length;
